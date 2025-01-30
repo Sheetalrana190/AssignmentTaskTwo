@@ -1,6 +1,6 @@
 ﻿/*
 * Author: Sheetal Rana
-* Date: 29 January 2025
+* Date: 30 January 2025
 * Project: Task_1
 * Description:
 * Calculate total money spent and average price of watching the game for Joe.
@@ -10,7 +10,7 @@ using System;
 
 namespace AssignmentTaskTwo
 {
-    // lets create class for Ticket
+    // Create the Triangle class with functions
     class Ticket
     {
         string colour;
@@ -42,18 +42,8 @@ namespace AssignmentTaskTwo
         public int GetPrice()
         {
             return price;
-        }
-        
-        
+        }  
     }
-
-        // create Enum to represent ticket colour and their prices
-        /*enum TicketColour
-        {
-           Purple = 50,
-           Green = 80,
-           Blue = 100
-        }*/
         internal class Program
     {
         static void Main(string[] args)
@@ -66,17 +56,17 @@ namespace AssignmentTaskTwo
             int purpleTicketQuantity = GetValidNumber("Purple");
             int greenTicketQuantity = GetValidNumber("Green");
             int blueTicketQuantity = GetValidNumber("Blue");
-            //int totalTickets = purpleTickets + greenTickets + blueTickets;
+            
+            // Create objects and pass the values
 
             Ticket purpleTickets = new Ticket("Purple", purpleTicketPrice, purpleTicketQuantity);
             Ticket greenTickets = new Ticket("Green", greenTicketPrice, greenTicketQuantity);
             Ticket blueTickets = new Ticket("Blue", blueTicketPrice, blueTicketQuantity);
-
+            // calculate the total tickets purchase of different colour
             int totalTickets = purpleTickets.GetQuantity() + greenTickets.GetQuantity() + blueTickets.GetQuantity();
 
             // Calculate the total money spent on buying tickets
 
-            //int totalSpent = (purpleTickets * (int)TicketColour.Purple) + (greenTickets * (int)TicketColour.Green) + (blueTickets * (int)TicketColour.Blue);
             double totalSpent = purpleTickets.GetTotalCost() + greenTickets.GetTotalCost() + blueTickets.GetTotalCost();
 
             // Calculate the average price for watching game
