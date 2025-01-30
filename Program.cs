@@ -43,6 +43,49 @@ namespace AssignmentTaskTwo
         {
             return price;
         }
+        
+        
+    }
+
+        // create Enum to represent ticket colour and their prices
+        /*enum TicketColour
+        {
+           Purple = 50,
+           Green = 80,
+           Blue = 100
+        }*/
+        internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int purpleTicketPrice = 50;
+            int greenTicketPrice = 80;
+            int blueTicketPrice = 100;
+
+            // initializing variable to store number of tickets for different colour purchase and get the correct value from function GetValidNumber
+            int purpleTicketQuantity = GetValidNumber("Purple");
+            int greenTicketQuantity = GetValidNumber("Green");
+            int blueTicketQuantity = GetValidNumber("Blue");
+            //int totalTickets = purpleTickets + greenTickets + blueTickets;
+
+            Ticket purpleTickets = new Ticket("Purple", purpleTicketPrice, purpleTicketQuantity);
+            Ticket greenTickets = new Ticket("Green", greenTicketPrice, greenTicketQuantity);
+            Ticket blueTickets = new Ticket("Blue", blueTicketPrice, blueTicketQuantity);
+
+            int totalTickets = purpleTickets.GetQuantity() + greenTickets.GetQuantity() + blueTickets.GetQuantity();
+
+            // Calculate the total money spent on buying tickets
+
+            //int totalSpent = (purpleTickets * (int)TicketColour.Purple) + (greenTickets * (int)TicketColour.Green) + (blueTickets * (int)TicketColour.Blue);
+            int totalSpent = purpleTickets.GetTotalCost() + greenTickets.GetTotalCost() + blueTickets.GetTotalCost();
+
+            // Calculate the average price for watching game
+            double averagePrice = totalSpent / totalTickets;
+
+            // Output the results
+            Console.WriteLine("Total amount spent on all tickets: $" + totalSpent.ToString("C"));
+            Console.WriteLine("Average price per game: $" + averagePrice.ToString("C"));
+        }
         // function to validate user input for number of tickets for different colour
         static int GetValidNumber(string colour)
         {
@@ -67,43 +110,6 @@ namespace AssignmentTaskTwo
 
             return numOfTicketBuy;
         }
-    }
 
-        // create Enum to represent ticket colour and their prices
-        /*enum TicketColour
-        {
-           Purple = 50,
-           Green = 80,
-           Blue = 100
-        }*/
-        internal class Program
-    {
-        static void Main(string[] args)
-        {
-
-            // initializing variable to store number of tickets for different colour purchase and get the correct value from function GetValidNumber
-            /*int purpleTickets = GetValidNumber("Purple");
-            int greenTickets = GetValidNumber("Green");
-            int blueTickets = GetValidNumber("Blue");
-            int totalTickets = purpleTickets + greenTickets + blueTickets;*/
-
-            Ticket purpleTickets = new Ticket("Purple", 50, Ticket.GetValidNumber("Purple"));
-            Ticket greenTickets = new Ticket("Green", 80, Ticket.GetValidNumber("Green");
-            Ticket blueTickets = new Ticket("Blue", 100, Ticket.GetValidNumber("Blue"));
-            int totalTickets = purpleTickets.GetQuantity() + greenTickets.GetQuantity() + blueTickets.GetQuantity();
-
-            // Calculate the total money spent on buying tickets
-
-            //int totalSpent = (purpleTickets * (int)TicketColour.Purple) + (greenTickets * (int)TicketColour.Green) + (blueTickets * (int)TicketColour.Blue);
-            int totalSpent = purpleTickets.GetTotalCost() + greenTickets.GetTotalCost() + blueTickets.GetTotalCost();
-
-            // Calculate the average price for watching game
-            double averagePrice = totalSpent / totalTickets;
-
-            // Output the results
-            Console.WriteLine("Total amount spent on all tickets: $" + totalSpent.ToString("C"));
-            Console.WriteLine("Average price per game: $" + averagePrice.ToString("C"));
-        }
-        
     }
 }
