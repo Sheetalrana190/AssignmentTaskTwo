@@ -21,10 +21,7 @@ namespace AssignmentTaskTwo
     {
         static void Main(string[] args)
         {
-            // initializing the variables for different colour Ticket cost
-            //int purpleTicketPrice = 50;
-            //int greenTicketPrice = 80;
-            //int blueTicketPrice = 100;
+            
             // initializing variable to store number of tickets for different colour purchase and get the correct value from function GetValidNumber
             int purpleTickets = GetValidNumber("Purple");
             int greenTickets = GetValidNumber("Green");
