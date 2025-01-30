@@ -31,12 +31,12 @@ namespace AssignmentTaskTwo
             {
                 try
                 {
-                    Console.WriteLine($"Enter number of trips to {colour}:");
+                    Console.WriteLine($"Enter number of tickets purchase for {colour}:");
                     NumOfTicketBuy = int.Parse(Console.ReadLine());
 
                     if (NumOfTicketBuy < 0)
                     {
-                        Console.WriteLine("Number of trips cannot be negative. Please enter a non-negative number.");
+                        Console.WriteLine("Number of ticket purchase cannot be negative. Please enter a non-negative number.");
                     }
                 }
                 catch (Exception)
