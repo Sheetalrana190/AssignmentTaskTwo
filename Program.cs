@@ -77,7 +77,7 @@ namespace AssignmentTaskTwo
             // Calculate the total money spent on buying tickets
 
             //int totalSpent = (purpleTickets * (int)TicketColour.Purple) + (greenTickets * (int)TicketColour.Green) + (blueTickets * (int)TicketColour.Blue);
-            int totalSpent = purpleTickets.GetTotalCost() + greenTickets.GetTotalCost() + blueTickets.GetTotalCost();
+            double totalSpent = purpleTickets.GetTotalCost() + greenTickets.GetTotalCost() + blueTickets.GetTotalCost();
 
             // Calculate the average price for watching game
             double averagePrice = totalSpent / totalTickets;
