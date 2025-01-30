@@ -10,35 +10,38 @@ using System.Net.Sockets;
 
 namespace AssignmentTaskTwo
 {
-    // create Enum to represent ticket colour and their prices
-    enum TicketColour
+    // lets create class for Ticket
+    class Ticket
     {
-        Purple = 50,
-        Green = 80,
-        Blue = 100
-    }
-    internal class Program
-    {
-        static void Main(string[] args)
+        private string colour;
+        private int price;
+        private int quantity;
+
+        public Ticket(string Colour, int Price, int Quantity)
         {
-            
-            // initializing variable to store number of tickets for different colour purchase and get the correct value from function GetValidNumber
-            int purpleTickets = GetValidNumber("Purple");
-            int greenTickets = GetValidNumber("Green");
-            int blueTickets = GetValidNumber("Blue");
-            int totalTickets = purpleTickets + greenTickets + blueTickets;
+            colour = Colour;
+            price = Price;
+            quantity = Quantity;
+        }
 
-            // Calculate the total money spent on buying tickets
-            
-            int totalSpent = (purpleTickets * (int)TicketColour.Purple) + (greenTickets * (int)TicketColour.Green) + (blueTickets * (int)TicketColour.Blue);
-            
+        public int GetTotalCost()
+        {
+            return quantity * price;
+        }
 
-            // Calculate the average price for watching game
-            double averagePrice = (double)totalSpent / totalTickets;
+        public int GetQuantity()
+        {
+            return quantity;
+        }
 
-            // Output the results
-            Console.WriteLine("Total amount spent on all tickets: $" + totalSpent.ToString("C"));
-            Console.WriteLine("Average price per game: $" + averagePrice.ToString("C"));
+        public string GetColour()
+        {
+            return colour;
+        }
+
+        public int GetPrice()
+        {
+            return price;
         }
         // function to validate user input for number of tickets for different colour
         static int GetValidNumber(string colour)
@@ -64,5 +67,43 @@ namespace AssignmentTaskTwo
 
             return numOfTicketBuy;
         }
+    }
+
+        // create Enum to represent ticket colour and their prices
+        /*enum TicketColour
+        {
+           Purple = 50,
+           Green = 80,
+           Blue = 100
+        }*/
+        internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            // initializing variable to store number of tickets for different colour purchase and get the correct value from function GetValidNumber
+            /*int purpleTickets = GetValidNumber("Purple");
+            int greenTickets = GetValidNumber("Green");
+            int blueTickets = GetValidNumber("Blue");
+            int totalTickets = purpleTickets + greenTickets + blueTickets;*/
+
+            Ticket purpleTickets = new Ticket("Purple", 50, Ticket.GetValidNumber("Purple", 50));
+            Ticket greenTickets = new Ticket("Green", 80, Ticket.GetValidNumber("Green", 80));
+            Ticket blueTickets = new Ticket("Blue", 100, Ticket.GetValidNumber("Blue", 100));
+            int totalTickets = purpleTickets.GetQuantity() + greenTickets.GetQuantity() + blueTickets.GetQuantity();
+
+            // Calculate the total money spent on buying tickets
+
+            //int totalSpent = (purpleTickets * (int)TicketColour.Purple) + (greenTickets * (int)TicketColour.Green) + (blueTickets * (int)TicketColour.Blue);
+            int totalSpent = purpleTickets.GetTotalCost() + greenTickets.GetTotalCost() + blueTickets.GetTotalCost();
+
+            // Calculate the average price for watching game
+            double averagePrice = totalSpent / totalTickets;
+
+            // Output the results
+            Console.WriteLine("Total amount spent on all tickets: $" + totalSpent.ToString("C"));
+            Console.WriteLine("Average price per game: $" + averagePrice.ToString("C"));
+        }
+        
     }
 }
