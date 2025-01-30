@@ -6,16 +6,25 @@
 * Calculate total money spent and average price of watching the game for Joe.
 */
 
+using System.Net.Sockets;
+
 namespace AssignmentTaskTwo
 {
+    // create Enum to represent ticket colour and their prices
+    enum TicketColour
+    {
+        Purple = 50,
+        Green = 80,
+        Blue = 100
+    }
     internal class Program
     {
         static void Main(string[] args)
         {
             // initializing the variables for different colour Ticket cost
-            int purpleTicketPrice = 50;
-            int greenTicketPrice = 80;
-            int blueTicketPrice = 100;
+            //int purpleTicketPrice = 50;
+            //int greenTicketPrice = 80;
+            //int blueTicketPrice = 100;
             // initializing variable to store number of tickets for different colour purchase and get the correct value from function GetValidNumber
             int purpleTickets = GetValidNumber("Purple");
             int greenTickets = GetValidNumber("Green");
@@ -23,7 +32,8 @@ namespace AssignmentTaskTwo
             int totalTickets = purpleTickets + greenTickets + blueTickets;
 
             // Calculate the total money spent on buying tickets
-            int totalSpent = (purpleTickets * purpleTicketPrice) + (greenTickets * greenTicketPrice) + (blueTickets * blueTicketPrice);
+            
+            int totalSpent = (purpleTickets * (int)TicketColour.Purple) + (greenTickets * (int)TicketColour.Green) + (blueTickets * (int)TicketColour.Blue);
             
 
             // Calculate the average price for watching game
