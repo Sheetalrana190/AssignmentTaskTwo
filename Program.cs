@@ -87,9 +87,9 @@ namespace AssignmentTaskTwo
             int blueTickets = GetValidNumber("Blue");
             int totalTickets = purpleTickets + greenTickets + blueTickets;*/
 
-            Ticket purpleTickets = new Ticket("Purple", 50, Ticket.GetValidNumber("Purple", 50));
-            Ticket greenTickets = new Ticket("Green", 80, Ticket.GetValidNumber("Green", 80));
-            Ticket blueTickets = new Ticket("Blue", 100, Ticket.GetValidNumber("Blue", 100));
+            Ticket purpleTickets = new Ticket("Purple", 50, Ticket.GetValidNumber("Purple"));
+            Ticket greenTickets = new Ticket("Green", 80, Ticket.GetValidNumber("Green");
+            Ticket blueTickets = new Ticket("Blue", 100, Ticket.GetValidNumber("Blue"));
             int totalTickets = purpleTickets.GetQuantity() + greenTickets.GetQuantity() + blueTickets.GetQuantity();
 
             // Calculate the total money spent on buying tickets
