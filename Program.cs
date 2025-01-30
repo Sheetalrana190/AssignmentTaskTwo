@@ -6,16 +6,16 @@
 * Calculate total money spent and average price of watching the game for Joe.
 */
 
-using System.Net.Sockets;
+using System;
 
 namespace AssignmentTaskTwo
 {
     // lets create class for Ticket
     class Ticket
     {
-        private string colour;
-        private int price;
-        private int quantity;
+        string colour;
+        int price;
+        int quantity;
 
         public Ticket(string Colour, int Price, int Quantity)
         {
