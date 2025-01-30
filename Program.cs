@@ -45,7 +45,7 @@ namespace AssignmentTaskTwo
                 }
             }
 
-            return trips;
+            return NumOfTicketBuy;
         }
     }
 }
