@@ -12,7 +12,11 @@ namespace AssignmentTaskTwo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            // initializing the variables for different colour Ticket cost
+            int PurpleTicketPrice = 50;
+            int GreenTicketPrice = 80;
+            int BlueTicketPrice = 100;
+
         }
     }
 }
