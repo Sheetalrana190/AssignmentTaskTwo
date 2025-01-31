@@ -84,7 +84,7 @@ namespace AssignmentTaskTwo
             {
                 try
                 {
-                    Console.WriteLine($"Enter number of tickets purchase for {colour}:");
+                    Console.WriteLine("Enter number of tickets purchase for {colour}:");
                     numOfTicketBuy = int.Parse(Console.ReadLine());
 
                     if (numOfTicketBuy < 0)
